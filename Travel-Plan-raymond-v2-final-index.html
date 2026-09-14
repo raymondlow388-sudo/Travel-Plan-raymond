@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1220"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="description" content="2027 芬兰＋挪威冬季之旅 · V2 Final · Mobile Travel Dashboard">
+<title>2027 Finland + Norway · Travel Dashboard V2</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#122033;--muted:#718096;--line:#e7ebf1;--blue:#2563eb;--cyan:#0f766e;--dark:#0b1220;--gold:#b7791f;--danger:#b42318;--shadow:0 10px 28px rgba(15,23,42,.07)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif}.app{max-width:760px;margin:auto;padding-bottom:96px}.hero{padding:24px 18px 20px;color:#fff;background:radial-gradient(circle at 85% 10%,#315ee8 0,#172554 42%,#0b1220 100%);border-radius:0 0 30px 30px}.eyebrow{font-size:12px;opacity:.78}.hero h1{font-size:29px;line-height:1.16;margin:7px 0}.hero p{margin:5px 0;color:#dbeafe;font-size:13px}.route{line-height:1.55}.progress{margin-top:16px;padding:13px 14px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.08);border-radius:18px}.progress-top{display:flex;justify-content:space-between;font-size:12px}.bar{height:7px;background:rgba(255,255,255,.15);border-radius:10px;margin-top:9px;overflow:hidden}.bar i{display:block;height:100%;background:#fff;width:0;border-radius:10px}.section{padding:18px 16px}.section h2{font-size:19px;margin:0 0 4px}.sub{font-size:12px;color:var(--muted);margin-bottom:11px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}.next-card{border:0;background:linear-gradient(135deg,#eff6ff,#fff);}.next-title{display:flex;justify-content:space-between;align-items:center}.next-big{font-size:22px;font-weight:900;margin:6px 0}.next-meta{font-size:12px;color:var(--muted);line-height:1.5}.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;margin-top:11px;padding:9px 12px;border-radius:12px;text-decoration:none;background:var(--blue);color:#fff;font-size:12px;font-weight:800;border:0}.btn.secondary{background:#eef4ff;color:var(--blue)}.pill{font-size:10px;font-weight:800;background:#eef4ff;color:var(--blue);padding:6px 8px;border-radius:999px}.today-card{background:#fff}.mini-label{font-size:10px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}.today-title{font-size:18px;font-weight:900;margin-top:4px}.timeline{position:relative;padding-left:8px}.day{position:relative;margin:0 0 12px 12px;padding:15px 15px 14px 18px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 6px 18px rgba(15,23,42,.045)}.day:before{content:"";position:absolute;left:-7px;top:21px;width:12px;height:12px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 4px #e7efff}.day:after{content:"";position:absolute;left:-2px;top:35px;bottom:-14px;width:2px;background:#dce5f2}.day:last-child:after{display:none}.dayhead{display:flex;justify-content:space-between;gap:8px}.daynum{font-weight:900;color:var(--blue)}.date{font-size:11px;color:var(--muted)}.route2{font-weight:900;margin:6px 0}.meta{font-size:11px;color:var(--muted);line-height:1.5}.details{display:none;margin-top:12px;padding-top:9px;border-top:1px solid var(--line)}.day.open .details{display:block}.item{padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px}.item:last-child{border-bottom:0}.item .t{font-size:11px;color:var(--blue);font-weight:800;margin-bottom:2px}.maps{display:inline-block;margin-top:7px;color:var(--blue);text-decoration:none;font-size:11px;font-weight:800}.rail{display:flex;gap:11px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 8px}.rail::-webkit-scrollbar{display:none}.flight{min-width:88%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}.top{display:flex;align-items:center;justify-content:space-between;gap:8px}.airline{font-weight:900}.flight-title{font-size:11px;color:var(--muted);margin-top:3px}.flight-route{display:grid;grid-template-columns:1fr 38px 1fr;align-items:center;gap:5px;margin:16px 0}.airport{font-size:23px;font-weight:900}.city{font-size:11px;color:var(--muted);margin-top:2px}.arrow{text-align:center;color:var(--blue);font-size:20px}.countdown{font-weight:900;color:var(--blue);font-size:13px}.small{font-size:11px;color:var(--muted);line-height:1.5}.place-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.place{padding:14px;background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.place b{font-size:14px}.place .maps{margin-top:9px}.kv{background:#f7f9fc;border-radius:14px;padding:11px}.kv small{display:block;color:var(--muted);font-size:9px}.kv strong{display:block;margin-top:3px;font-size:12px}.car-title{font-size:20px;font-weight:900;margin-top:4px}.note{background:#fff8e6;border:1px solid #f1d38a;color:#6b4f0a;border-radius:15px;padding:12px;font-size:12px;line-height:1.55}.a-rail{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 7px}.a-card{min-width:210px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow)}.stars{letter-spacing:1px;margin:7px 0}.check{display:flex;gap:8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}.check:last-child{border-bottom:0}.check input{margin-top:2px}.prep-card{margin-bottom:10px}.bottom{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.94);backdrop-filter:blur(15px);border-top:1px solid var(--line);z-index:20}.bottom-inner{max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}.bottom button{border:0;background:transparent;color:var(--muted);padding:8px 2px calc(8px + env(safe-area-inset-bottom));font-size:10px}.bottom button.active{color:var(--blue);font-weight:900}.ico{display:block;font-size:17px;margin-bottom:2px}.hidden{display:none}@media(min-width:700px){.hero{padding-left:28px;padding-right:28px}.section{padding-left:28px;padding-right:28px}}
+</style></head>
+<body><main class="app" id="app"></main><nav class="bottom"><div class="bottom-inner">
+<button class="active" data-tab="home"><span class="ico">⌂</span>Home</button><button data-tab="itinerary"><span class="ico">▦</span>行程</button><button data-tab="transport"><span class="ico">✈</span>交通</button><button data-tab="places"><span class="ico">📍</span>地点</button><button data-tab="prepare"><span class="ico">✓</span>准备</button>
+</div></nav>
+<script>
+let D=null,activeTab='home';
+const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function localTarget(date,time,route=''){if(!time)return'';let r=(route||'').toLowerCase(),z=r.includes('kuala lumpur')?'+08:00':(r.includes('rovaniemi')||r.includes('helsinki'))?'+02:00':'+01:00';return `${date}T${time}:00${z}`}
+function flightTarget(f){return f.departure_local?localTarget(f.date,f.departure_local,f.route):''}
+function cd(t){let ms=new Date(t)-new Date();if(ms<=0)return'已到时间';let s=Math.floor(ms/1000),d=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60);return `${d}天 ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`}
+function maps(url,name){return url?`<a class="maps" href="${url}" target="_blank" rel="noopener">📍 ${esc(name)} · Google Maps →</a>`:''}
+function nextFlight(){let now=new Date();return D.flights.map((f,i)=>({f,i,t:flightTarget(f)?new Date(flightTarget(f)):null})).filter(x=>x.t&&x.t>now)[0]||{f:D.flights[0],i:0,t:null}}
+function progress(){let start=new Date('2027-01-31T00:00:00+08:00'),end=new Date('2027-02-11T23:59:59+01:00'),now=new Date();let p=Math.max(0,Math.min(100,(now-start)/(end-start)*100));return p}
+function hero(){let n=nextFlight(),f=n.f;return `<header class="hero"><div class="eyebrow">🇫🇮 Finland · 🇳🇴 Norway · 5人同行 · V2</div><h1>${esc(D.trip.title)}</h1><p>${D.trip.start_date} — ${D.trip.end_date} · ${D.trip.days}天${D.trip.nights}夜</p><p class="route">${esc(D.trip.route)}</p><div class="progress"><div class="progress-top"><span>旅行进度</span><b>${Math.round(progress())}%</b></div><div class="bar"><i style="width:${progress()}%"></i></div></div></header>`}
+function nextCard(){let n=nextFlight(),f=n.f;return `<section class="section"><div class="card next-card"><div class="next-title"><span class="mini-label">✈️ NEXT</span><span class="pill">${esc(f.flight_number)}</span></div><div class="next-big">${esc(f.route)}</div><div class="next-meta">${esc(f.date)} · 出发 ${esc(f.departure_local||'待确认')} · ${esc(f.airline)}</div><div class="countdown" style="margin-top:8px" data-target="${n.t?n.t.toISOString():''}">⏳ ${n.t?cd(n.t):'时间待确认'}</div></div></section>`}
+function todayCard(){let now=new Date();let days=D.daily_itinerary;let idx=days.findIndex(d=>{let st=new Date(d.date+'T00:00:00+01:00'),en=new Date(d.date+'T23:59:59+01:00');return now>=st&&now<=en});let d=idx>=0?days[idx]:days[0];return `<section class="section"><div class="card today-card"><div class="mini-label">🗓️ TODAY / NEXT DAY</div><div class="today-title">D${d.day} · ${esc(d.location)}</div><div class="small">${esc(d.date)} · ${esc(d.country)} · 住宿：${esc(d.overnight)}</div><button class="btn secondary" onclick="openDay(${d.day})">查看当天行程 →</button></div></section>`}
+function flightCard(f){let t=flightTarget(f),p=f.route.split(' → ');return `<article class="flight"><div class="top"><div><div class="airline">${esc(f.airline)}</div><div class="flight-title">Flight</div></div><span class="pill">${esc(f.flight_number)}</span></div><div class="flight-route"><div><div class="airport">${esc(p[0])}</div><div class="city">${esc(f.date)} · ${esc(f.departure_local||'待确认')}</div></div><div class="arrow">→</div><div><div class="airport">${esc(p[p.length-1])}</div><div class="city">${esc(f.arrival_local||f.final_arrival_local||'待确认')}</div></div></div><div class="countdown" data-target="${t}">⏳ ${t?cd(t):'出发时间待确认'}</div></article>`}
+function dayCard(d){let links=Object.entries(d.google_maps||{}).map(([n,u])=>maps(u,n)).join('<br>');return `<article class="day" id="day-${d.day}"><div class="dayhead"><span class="daynum">D${d.day}</span><span class="date">${esc(d.date)} · ${esc(d.weekday)}</span></div><div class="route2">${esc(d.location)}</div><div class="meta">${esc((d.transport||[]).join(' · '))}<br>住宿：${esc(d.overnight)}</div><div class="details">${(d.schedule||[]).map(x=>`<div class="item"><div class="t">${esc(x.time||'')}</div><div>${esc(x.activity)}</div></div>`).join('')}<div>${links}</div>${(d.notes||[]).map(n=>`<div class="small" style="margin-top:8px">⚠️ ${esc(n)}</div>`).join('')}</div></article>`}
+function car(){let c=D.car_rental;return `<section class="section"><h2>🚙 租车</h2><div class="sub">Lofoten 自驾核心资料</div><div class="card"><div class="mini-label">${esc(c.company)}</div><div class="car-title">${esc(c.vehicle)}</div><div class="grid2" style="margin-top:12px"><div class="kv"><small>取车</small><strong>2027/02/06 · EVE</strong></div><div class="kv"><small>还车</small><strong>2027/02/10 · EVE</strong></div></div><p class="small">🔒 Reservation reference：Private</p>${maps(D.google_maps['Evenes Airport'],'Evenes Airport')}</div></section>`}
+function aurora(){return `<section class="section"><h2>🌌 极光</h2><div class="sub">天气 / 云量决定最终安排</div><div class="a-rail">${D.aurora_plan.map(a=>`<div class="a-card"><b>${esc(a.location)}</b><div class="small">${esc(a.date)} · ${esc(a.time)}</div><div class="stars">${esc(a.label)}</div><div class="small">优先级 ${a.priority}/4</div></div>`).join('')}</div></section>`}
+function places(){let names=Object.keys(D.google_maps||{});return hero()+`<section class="section"><h2>📍 Places</h2><div class="sub">所有主要地点直接打开 Google Maps</div><div class="place-grid">${names.map(n=>`<div class="place"><b>${esc(n)}</b>${maps(D.google_maps[n],n)}</div>`).join('')}</div></section>`}
+function home(){return hero()+nextCard()+todayCard()+`<section class="section"><h2>✈️ 交通快览</h2><div class="sub">左右滑动查看航班</div><div class="rail">${D.flights.map(flightCard).join('')}</div></section>`+car()+aurora()+`<section class="section"><div class="note">⚠️ 航班、火车、住宿、租车、道路、景点开放时间/票价及极光预报均须在出发前重新确认。</div></section>`}
+function itinerary(){return hero()+`<section class="section"><h2>🗓️ 12天完整行程</h2><div class="sub">点击每天展开：时间 · 活动 · 地图 · 住宿 · 注意事项</div><div class="timeline">${D.daily_itinerary.map(dayCard).join('')}</div></section>`}
+function transport(){return hero()+`<section class="section"><h2>✈️ Flights</h2><div class="rail">${D.flights.map(flightCard).join('')}</div></section><section class="section"><h2>🚆 VR Night Train</h2><div class="card"><b>VR265 · Sleeper Cabin</b><p>Helsinki → Rovaniemi</p><div class="small">2027/02/01 19:29 → 2027/02/02 07:20</div>${maps(D.google_maps['Helsinki Central Railway Station'],'Helsinki Central Railway Station')}${maps(D.google_maps['Rovaniemi Railway Station'],'Rovaniemi Railway Station')}</div></section>`+car()+`<section class="section"><h2>❄️ Winter Driving</h2><div class="note">${(D.driving_notes||D.car_rental.winter_driving_notes||[]).map(x=>'• '+esc(x)).join('<br>')}</div></section>`}
+function prepare(){let p=D.preparation_and_packing;let groups=[['📄 文件与旅行',p.documents_and_travel],['🧥 冬季衣物',p.winter_clothing],['🔋 电子设备',p.electronics],['🚗 租车与道路',p.car_and_road_trip],['🌌 极光',p.aurora],['🧴 健康与舒适',p.health_and_comfort]];return hero()+`<section class="section"><h2>🎒 Prepare</h2><div class="sub">勾选状态会保存在本机浏览器</div>${groups.map(([g,a],gi)=>`<div class="card prep-card"><b>${g}</b>${(a||[]).map((x,i)=>{let id='p'+gi+'_'+i;return `<label class="check"><input data-check="${id}" type="checkbox"><span>${esc(x)}</span></label>`}).join('')}</div>`).join('')}<div class="card"><b>🛡️ 租车检查 / 保险</b><details><summary style="margin-top:11px">取车检查</summary><p class="small">拍摄车身四周、划痕、玻璃、灯、轮胎、仪表盘里程与油量；确认冬季胎/设备及还车地点。</p></details><details><summary>保险</summary><p class="small">实际保障以 Sixt Rental Agreement / Insurance Policy 为准。</p></details><details><summary>冬季驾驶</summary><p class="small">4WD 不能消除冰雪路面的刹车风险。冬季道路请预留缓冲时间。</p></details></div></section>`}
+function bind(){document.querySelectorAll('.bottom button').forEach(b=>b.classList.toggle('active',b.dataset.tab===activeTab));document.querySelectorAll('.day').forEach(x=>x.addEventListener('click',e=>{if(e.target.closest('a'))return;x.classList.toggle('open')}));document.querySelectorAll('[data-check]').forEach(c=>{let k='v2_'+c.dataset.check;c.checked=localStorage.getItem(k)==='1';c.addEventListener('change',()=>localStorage.setItem(k,c.checked?'1':'0'))});updateTimers()}
+function render(tab){activeTab=tab;let html=tab==='home'?home():tab==='itinerary'?itinerary():tab==='transport'?transport():tab==='places'?places():prepare();$('#app').innerHTML=html;bind()}
+function openDay(n){render('itinerary');setTimeout(()=>{let e=$('#day-'+n);if(e){e.classList.add('open');e.scrollIntoView({behavior:'smooth',block:'center'});}},80)}
+function updateTimers(){document.querySelectorAll('[data-target]').forEach(e=>{if(e.dataset.target)e.textContent='⏳ '+cd(e.dataset.target)})}
+D={
+  "schema_version": "1.0",
+  "data_status": "planning_master",
+  "source": {
+    "master_file": "2027_Finland_Norway_12D11N_Final_Itinerary.md",
+    "version": 1,
+    "authority": "master_itinerary_file",
+    "notes": "Master itinerary is the baseline. User-provided booking times override conflicting planning times. Public opening hours/prices are reference values only and must be reconfirmed before departure."
+  },
+  "trip": {
+    "title": "2027 芬兰＋挪威冬季之旅",
+    "days": 12,
+    "nights": 11,
+    "start_date": "2027-01-31",
+    "end_date": "2027-02-11",
+    "countries": [
+      "Malaysia",
+      "Finland",
+      "Norway"
+    ],
+    "cities_and_areas": [
+      "Kuala Lumpur",
+      "Helsinki",
+      "Rovaniemi",
+      "Tromsø",
+      "Evenes",
+      "Svolvær",
+      "Henningsvær",
+      "Leknes",
+      "Nusfjord",
+      "Moskenes",
+      "Reine",
+      "Hamnøy",
+      "Sakrisøy",
+      "Å",
+      "Evenskjer/Tjeldsund",
+      "Oslo"
+    ],
+    "route": "Kuala Lumpur → Helsinki → Rovaniemi → Tromsø → Evenes → Lofoten → Oslo → Kuala Lumpur",
+    "travel_style": [
+      "winter travel",
+      "Arctic Circle",
+      "Northern Lights",
+      "road trip",
+      "mobile-friendly group itinerary"
+    ]
+  },
+  "flights": [
+    {
+      "date": "2027-01-31",
+      "flight_number": "LH705",
+      "airline": "Lufthansa",
+      "route": "Kuala Lumpur → Frankfurt → Finland/Helsinki",
+      "departure_local": "23:55",
+      "final_arrival_date": "2027-02-01",
+      "final_arrival_local": "12:55",
+      "final_destination": "Helsinki, Finland",
+      "source": "user_provided_booking",
+      "planning_note": "Master file says via Frankfurt; exact onward segment number/time is not specified in the master file."
+    },
+    {
+      "date": "2027-02-03",
+      "flight_number": "AY541",
+      "airline": "Finnair",
+      "route": "Rovaniemi → Tromsø",
+      "departure_local": "09:25",
+      "arrival_local": "09:30",
+      "source": "user_provided_booking",
+      "note": "Use the user's booking time rather than older planning time in master file."
+    },
+    {
+      "date": "2027-02-06",
+      "flight_number": "WF873",
+      "airline": "Widerøe",
+      "route": "Tromsø → Evenes (EVE)",
+      "departure_local": "10:20",
+      "arrival_local": "11:00",
+      "source": "user_provided_booking"
+    },
+    {
+      "date": "2027-02-10",
+      "flight_number": "DY363",
+      "airline": "Norwegian",
+      "route": "Evenes (EVE) → Oslo",
+      "departure_local": "11:00",
+      "arrival_local": "12:55",
+      "source": "user_provided_booking"
+    },
+    {
+      "date": "2027-02-11",
+      "flight_number": "LH2455",
+      "airline": "Lufthansa",
+      "route": "Oslo → Frankfurt → Kuala Lumpur",
+      "departure_local": null,
+      "source": "master_itinerary",
+      "note": "Master file only specifies morning departure; exact booked time should be added when available."
+    }
+  ],
+  "trains": [
+    {
+      "date": "2027-02-01",
+      "train_number": "VR265",
+      "operator": "VR",
+      "route": "Helsinki → Rovaniemi",
+      "departure_local": "19:29",
+      "arrival_date": "2027-02-02",
+      "arrival_local": "07:20",
+      "class_or_accommodation": "Sleeper Cabin",
+      "source": "user_provided_booking",
+      "notes": [
+        "Overnight sleeper",
+        "Master file describes evening departure"
+      ]
+    }
+  ],
+  "car_rental": {
+    "company": "Sixt",
+    "vehicle": "Volvo XC90 4WD",
+    "pickup": {
+      "date": "2027-02-06",
+      "location": "Evenes Airport (EVE)"
+    },
+    "return": {
+      "date": "2027-02-10",
+      "location": "Evenes Airport (EVE)"
+    },
+    "source": "user_provided",
+    "winter_driving_notes": [
+      "XC90 4WD improves traction but does not remove ice/braking risk.",
+      "Drive slowly on snow/ice and keep a larger following distance.",
+      "Adjust route and timing according to weather and road conditions."
+    ]
+  },
+  "accommodations": [
+    {
+      "night": 1,
+      "date": "2027-01-31",
+      "name": null,
+      "type": "airplane",
+      "location": "overnight in transit"
+    },
+    {
+      "night": 2,
+      "date": "2027-02-01",
+      "name": "VR265 Sleeper Cabin",
+      "type": "train sleeper",
+      "city": "Rovaniemi"
+    },
+    {
+      "night": 3,
+      "date": "2027-02-02",
+      "name": "Nova Skyland Hotel",
+      "type": "hotel",
+      "city": "Rovaniemi",
+      "country": "Finland",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Nova+Skyland+Hotel+Rovaniemi"
+    },
+    {
+      "night": 4,
+      "date": "2027-02-03",
+      "name": "Private accommodation",
+      "type": "private accommodation",
+      "city": "Tromsø"
+    },
+    {
+      "night": 5,
+      "date": "2027-02-04",
+      "name": "Private accommodation",
+      "type": "private accommodation",
+      "city": "Tromsø"
+    },
+    {
+      "night": 6,
+      "date": "2027-02-05",
+      "name": "Private accommodation",
+      "type": "private accommodation",
+      "city": "Tromsø"
+    },
+    {
+      "night": 7,
+      "date": "2027-02-06",
+      "name": "Fast Hotel Svolvær",
+      "type": "hotel",
+      "city": "Svolvær",
+      "country": "Norway",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Fast+Hotel+Svolvaer"
+    },
+    {
+      "night": 8,
+      "date": "2027-02-07",
+      "name": "Private accommodation",
+      "type": "private accommodation",
+      "city": "Moskenes/Reine area"
+    },
+    {
+      "night": 9,
+      "date": "2027-02-08",
+      "name": "Private accommodation",
+      "type": "private accommodation",
+      "city": "Moskenes/Reine area"
+    },
+    {
+      "night": 10,
+      "date": "2027-02-09",
+      "name": "Private accommodation",
+      "type": "private accommodation",
+      "city": "Evenskjer/Tjeldsund"
+    },
+    {
+      "night": 11,
+      "date": "2027-02-10",
+      "name": "Radisson Blu Plaza Hotel Oslo",
+      "type": "hotel",
+      "city": "Oslo",
+      "country": "Norway",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Radisson+Blu+Plaza+Hotel+Oslo"
+    }
+  ],
+  "daily_itinerary": [
+    {
+      "day": 1,
+      "date": "2027-01-31",
+      "weekday": "Sunday",
+      "country": "Malaysia / Finland transit",
+      "location": "Kuala Lumpur → Helsinki",
+      "transport": [
+        "Lufthansa LH705",
+        "via Frankfurt"
+      ],
+      "schedule": [
+        {
+          "time": "23:55",
+          "activity": "Depart Kuala Lumpur"
+        },
+        {
+          "time": null,
+          "activity": "Transit via Frankfurt"
+        },
+        {
+          "time": "2027-02-01 12:55",
+          "activity": "Final planned arrival in Helsinki"
+        }
+      ],
+      "overnight": "airplane / transit"
+    },
+    {
+      "day": 2,
+      "date": "2027-02-01",
+      "weekday": "Monday",
+      "country": "Finland",
+      "location": "Helsinki → Rovaniemi",
+      "transport": [
+        "VR265 Sleeper Cabin"
+      ],
+      "schedule": [
+        {
+          "time": "morning–evening",
+          "activity": "Helsinki transfer / preparation for night train"
+        },
+        {
+          "time": "19:29",
+          "activity": "VR265 departure"
+        },
+        {
+          "time": "overnight",
+          "activity": "Sleeper Cabin to Rovaniemi"
+        }
+      ],
+      "overnight": "VR265 Sleeper Cabin"
+    },
+    {
+      "day": 3,
+      "date": "2027-02-02",
+      "weekday": "Tuesday",
+      "country": "Finland",
+      "location": "Rovaniemi",
+      "transport": [
+        "Rovaniemi Railway Station → hotel by taxi/transfer"
+      ],
+      "schedule": [
+        {
+          "time": "07:20",
+          "activity": "VR265 scheduled arrival"
+        },
+        {
+          "time": "around 08:00",
+          "activity": "Arrive/settle in Rovaniemi"
+        },
+        {
+          "time": "09:30–16:00",
+          "activity": "Santa Claus Village"
+        },
+        {
+          "time": "19:00–23:30",
+          "activity": "Northern Lights candidate window"
+        }
+      ],
+      "overnight": "Nova Skyland Hotel",
+      "google_maps": {
+        "Rovaniemi Railway Station": "https://www.google.com/maps/search/?api=1&query=Rovaniemi+Railway+Station",
+        "Santa Claus Village": "https://www.google.com/maps/search/?api=1&query=Santa+Claus+Village+Rovaniemi",
+        "Nova Skyland Hotel": "https://www.google.com/maps/search/?api=1&query=Nova+Skyland+Hotel+Rovaniemi"
+      }
+    },
+    {
+      "day": 4,
+      "date": "2027-02-03",
+      "weekday": "Wednesday",
+      "country": "Finland → Norway",
+      "location": "Rovaniemi → Tromsø",
+      "transport": [
+        "Finnair AY541"
+      ],
+      "schedule": [
+        {
+          "time": "09:25",
+          "activity": "Flight departure Rovaniemi"
+        },
+        {
+          "time": "09:30",
+          "activity": "Flight arrival Tromsø"
+        },
+        {
+          "time": "12:00–14:30",
+          "activity": "Tromsø Harbour / Storgata / Tromsø Cathedral / Arctic Cathedral"
+        },
+        {
+          "time": "15:00–17:00",
+          "activity": "Fjellheisen"
+        },
+        {
+          "time": "19:00–23:30",
+          "activity": "Northern Lights"
+        }
+      ],
+      "overnight": "Private accommodation, Tromsø",
+      "google_maps": {
+        "Tromsø Harbour": "https://www.google.com/maps/search/?api=1&query=Tromso+Harbour",
+        "Storgata": "https://www.google.com/maps/search/?api=1&query=Storgata+Tromso",
+        "Tromsø Cathedral": "https://www.google.com/maps/search/?api=1&query=Tromso+Cathedral",
+        "Arctic Cathedral": "https://www.google.com/maps/search/?api=1&query=Arctic+Cathedral+Tromso",
+        "Fjellheisen": "https://www.google.com/maps/search/?api=1&query=Fjellheisen+Tromso"
+      }
+    },
+    {
+      "day": 5,
+      "date": "2027-02-04",
+      "weekday": "Thursday",
+      "country": "Norway",
+      "location": "Tromsø",
+      "transport": [
+        "Husky activity transfer"
+      ],
+      "schedule": [
+        {
+          "time": "08:30–14:00",
+          "activity": "Husky Dog Sledding"
+        },
+        {
+          "time": "afternoon",
+          "activity": "Hotel rest / shower / food"
+        },
+        {
+          "time": "19:00–23:30",
+          "activity": "Northern Lights"
+        }
+      ],
+      "overnight": "Private accommodation, Tromsø",
+      "google_maps": {
+        "Husky Dog Sledding": "https://www.google.com/maps/search/?api=1&query=Husky+Dog+Sledding+Tromso"
+      }
+    },
+    {
+      "day": 6,
+      "date": "2027-02-05",
+      "weekday": "Friday",
+      "country": "Norway",
+      "location": "Tromsø",
+      "transport": [
+        "Tromsø city walking/public transport"
+      ],
+      "schedule": [
+        {
+          "time": "09:30–16:00",
+          "activity": "Harbour / Polaria / Polar Museum / Storgata"
+        },
+        {
+          "time": "afternoon",
+          "activity": "Pack luggage / prepare for departure"
+        },
+        {
+          "time": "19:00–23:00",
+          "activity": "Backup Northern Lights window"
+        }
+      ],
+      "overnight": "Private accommodation, Tromsø",
+      "google_maps": {
+        "Polaria": "https://www.google.com/maps/search/?api=1&query=Polaria+Tromso",
+        "Polar Museum": "https://www.google.com/maps/search/?api=1&query=Polar+Museum+Tromso",
+        "Tromsø Harbour": "https://www.google.com/maps/search/?api=1&query=Tromso+Harbour",
+        "Storgata": "https://www.google.com/maps/search/?api=1&query=Storgata+Tromso"
+      }
+    },
+    {
+      "day": 7,
+      "date": "2027-02-06",
+      "weekday": "Saturday",
+      "country": "Norway",
+      "location": "Tromsø → Evenes → Svolvær",
+      "transport": [
+        "Widerøe WF873",
+        "Sixt Volvo XC90 4WD"
+      ],
+      "schedule": [
+        {
+          "time": "10:20",
+          "activity": "Depart Tromsø"
+        },
+        {
+          "time": "11:00",
+          "activity": "Arrive Evenes (EVE)"
+        },
+        {
+          "time": "after arrival",
+          "activity": "Pick up Sixt Volvo XC90 4WD"
+        },
+        {
+          "time": "winter 3–3.5h",
+          "activity": "Drive EVE → Svolvær, approx. 165 km"
+        },
+        {
+          "time": "evening",
+          "activity": "Check in Fast Hotel Svolvær / dinner / rest"
+        }
+      ],
+      "overnight": "Fast Hotel Svolvær",
+      "google_maps": {
+        "Evenes Airport": "https://www.google.com/maps/search/?api=1&query=Harstad-Narvik+Airport+Evenes",
+        "Fast Hotel Svolvær": "https://www.google.com/maps/search/?api=1&query=Fast+Hotel+Svolvaer"
+      }
+    },
+    {
+      "day": 8,
+      "date": "2027-02-07",
+      "weekday": "Sunday",
+      "country": "Norway",
+      "location": "Svolvær → Henningsvær → Leknes → Nusfjord → Moskenes",
+      "transport": [
+        "Self-drive on E10 and local roads"
+      ],
+      "schedule": [
+        {
+          "time": "08:30",
+          "activity": "Depart Svolvær"
+        },
+        {
+          "time": "morning",
+          "activity": "Henningsvær"
+        },
+        {
+          "time": "daytime",
+          "activity": "Leknes"
+        },
+        {
+          "time": "daytime",
+          "activity": "Nusfjord"
+        },
+        {
+          "time": "late afternoon/evening",
+          "activity": "Continue to Moskenes / Reine area"
+        },
+        {
+          "time": "19:00–23:00",
+          "activity": "Northern Lights"
+        }
+      ],
+      "overnight": "Private accommodation, Moskenes/Reine area",
+      "google_maps": {
+        "Svolvær": "https://www.google.com/maps/search/?api=1&query=Svolvaer+Norway",
+        "Henningsvær": "https://www.google.com/maps/search/?api=1&query=Henningsvaer+Norway",
+        "Leknes": "https://www.google.com/maps/search/?api=1&query=Leknes+Norway",
+        "Nusfjord": "https://www.google.com/maps/search/?api=1&query=Nusfjord+Norway",
+        "Moskenes": "https://www.google.com/maps/search/?api=1&query=Moskenes+Norway"
+      },
+      "notes": [
+        "Winter buffer required",
+        "Original Lofoten planning material also mentions Flakstad/Ramberg as possible photo stops if time/weather allow."
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2027-02-08",
+      "weekday": "Monday",
+      "country": "Norway",
+      "location": "Reine → Hamnøy → Sakrisøy → Å",
+      "transport": [
+        "Short southern Lofoten self-drive"
+      ],
+      "schedule": [
+        {
+          "time": "09:00",
+          "activity": "Depart"
+        },
+        {
+          "time": "daytime",
+          "activity": "Reine viewpoints / Reine"
+        },
+        {
+          "time": "daytime",
+          "activity": "Hamnøy"
+        },
+        {
+          "time": "daytime",
+          "activity": "Sakrisøy"
+        },
+        {
+          "time": "daytime",
+          "activity": "Å"
+        },
+        {
+          "time": "18:30–23:00",
+          "activity": "Priority Northern Lights window"
+        }
+      ],
+      "overnight": "Private accommodation, Moskenes/Reine area",
+      "google_maps": {
+        "Reine": "https://www.google.com/maps/search/?api=1&query=Reine+Norway",
+        "Hamnøy": "https://www.google.com/maps/search/?api=1&query=Hamnoy+Norway",
+        "Sakrisøy": "https://www.google.com/maps/search/?api=1&query=Sakrisoy+Norway",
+        "Å": "https://www.google.com/maps/search/?api=1&query=A+i+Lofoten+Norway"
+      },
+      "notes": [
+        "Focus on Reine/Hamnøy/Å photography; avoid overloading the day with extra stops.",
+        "Optional hiking/photography such as Reinebringen or Ryten only if weather, daylight and road/track conditions are suitable."
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2027-02-09",
+      "weekday": "Tuesday",
+      "country": "Norway",
+      "location": "Moskenes → Tjeldsund/Evenskjer",
+      "transport": [
+        "Self-drive"
+      ],
+      "schedule": [
+        {
+          "time": "08:00–08:30",
+          "activity": "Depart Moskenes"
+        },
+        {
+          "time": "daytime",
+          "activity": "Pure transfer day north/east"
+        },
+        {
+          "time": "winter 5–6h",
+          "activity": "Drive approx. 280–300 km"
+        },
+        {
+          "time": "evening",
+          "activity": "Arrive Evenskjer / rest"
+        }
+      ],
+      "overnight": "Private accommodation, Evenskjer/Tjeldsund",
+      "google_maps": {
+        "Evenskjer": "https://www.google.com/maps/search/?api=1&query=Evenskjer+Norway"
+      }
+    },
+    {
+      "day": 11,
+      "date": "2027-02-10",
+      "weekday": "Wednesday",
+      "country": "Norway",
+      "location": "Evenskjer → Evenes → Oslo",
+      "transport": [
+        "Sixt car",
+        "Norwegian DY363"
+      ],
+      "schedule": [
+        {
+          "time": "morning",
+          "activity": "Elvehøy → Evenes Airport"
+        },
+        {
+          "time": "before flight",
+          "activity": "Return Sixt Volvo XC90 4WD"
+        },
+        {
+          "time": "11:00",
+          "activity": "DY363 departure EVE"
+        },
+        {
+          "time": "12:55",
+          "activity": "Arrive Oslo"
+        },
+        {
+          "time": "afternoon",
+          "activity": "Oslo city centre: Opera House, Karl Johans gate, Oslo Cathedral, Stortinget, Royal Palace, Aker Brygge"
+        },
+        {
+          "time": "evening",
+          "activity": "Check in Radisson Blu Plaza Hotel Oslo"
+        }
+      ],
+      "overnight": "Radisson Blu Plaza Hotel Oslo",
+      "google_maps": {
+        "Oslo Opera House": "https://www.google.com/maps/search/?api=1&query=Oslo+Opera+House",
+        "Karl Johans gate": "https://www.google.com/maps/search/?api=1&query=Karl+Johans+gate+Oslo",
+        "Oslo Cathedral": "https://www.google.com/maps/search/?api=1&query=Oslo+Cathedral",
+        "Stortinget": "https://www.google.com/maps/search/?api=1&query=Stortinget+Oslo",
+        "Royal Palace": "https://www.google.com/maps/search/?api=1&query=Royal+Palace+Oslo",
+        "Aker Brygge": "https://www.google.com/maps/search/?api=1&query=Aker+Brygge+Oslo",
+        "Radisson Blu Plaza Hotel Oslo": "https://www.google.com/maps/search/?api=1&query=Radisson+Blu+Plaza+Hotel+Oslo"
+      }
+    },
+    {
+      "day": 12,
+      "date": "2027-02-11",
+      "weekday": "Thursday",
+      "country": "Norway → Germany → Malaysia",
+      "location": "Oslo → Frankfurt → Kuala Lumpur",
+      "transport": [
+        "Lufthansa LH2455"
+      ],
+      "schedule": [
+        {
+          "time": "morning",
+          "activity": "Oslo departure"
+        },
+        {
+          "time": null,
+          "activity": "Transit Frankfurt"
+        },
+        {
+          "time": null,
+          "activity": "Continue to Kuala Lumpur"
+        }
+      ],
+      "overnight": "none"
+    }
+  ],
+  "aurora_plan": [
+    {
+      "date": "2027-02-03",
+      "location": "Tromsø",
+      "time": "19:00–23:30",
+      "priority": 3,
+      "label": "⭐⭐⭐"
+    },
+    {
+      "date": "2027-02-04",
+      "location": "Tromsø",
+      "time": "19:00–23:30",
+      "priority": 3,
+      "label": "⭐⭐⭐"
+    },
+    {
+      "date": "2027-02-05",
+      "location": "Tromsø",
+      "time": "19:00–23:00",
+      "priority": 2,
+      "label": "⭐⭐"
+    },
+    {
+      "date": "2027-02-07",
+      "location": "Lofoten",
+      "time": "19:00–23:00",
+      "priority": 2,
+      "label": "⭐⭐"
+    },
+    {
+      "date": "2027-02-08",
+      "location": "Reine/Hamnøy",
+      "time": "18:30–23:00",
+      "priority": 4,
+      "label": "⭐⭐⭐⭐"
+    }
+  ],
+  "attractions_reference": [
+    {
+      "name": "Santa Claus Village",
+      "location": "Rovaniemi",
+      "planned_visit": "2027-02-02 09:30–16:00",
+      "reference_opening": "Open every day of the year",
+      "reference_price": "Village entrance free; individual activities/services may charge separately",
+      "source_type": "public_reference",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Santa+Claus+Village+Rovaniemi",
+      "official_reference": "https://www.visitrovaniemi.fi/attraction/santa-claus-village/",
+      "reconfirm_before_trip": true
+    },
+    {
+      "name": "Santa Claus Office",
+      "location": "Santa Claus Village, Rovaniemi",
+      "reference_opening": "2027-01-04–2027-03-31: daily 09:00–18:00 (current published schedule; subject to change)",
+      "reference_price": "Free entrance",
+      "source_type": "public_reference",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Santa+Claus+Office+Rovaniemi",
+      "official_reference": "https://santaclausoffice.com/location/",
+      "reconfirm_before_trip": true
+    },
+    {
+      "name": "Fjellheisen Cable Car",
+      "location": "Tromsø",
+      "planned_visit": "2027-02-03 15:00–17:00",
+      "reference_opening": "Cable car 09:00–00:00; café 09:00–23:30 according to current official site",
+      "reference_price": "Adult return NOK 645; child 3–15 NOK 310; one-way adult NOK 415; child NOK 195 according to current official site",
+      "source_type": "public_reference",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Fjellheisen+Tromso",
+      "official_reference": "https://www.fjellheisen.no/engelsk/fjellheisen-home",
+      "reconfirm_before_trip": true,
+      "weather_note": "Operations can be suspended because of difficult weather/wind."
+    }
+  ],
+  "google_maps": {
+    "Helsinki Central Railway Station": "https://www.google.com/maps/search/?api=1&query=Helsinki+Central+Railway+Station",
+    "Rovaniemi Railway Station": "https://www.google.com/maps/search/?api=1&query=Rovaniemi+Railway+Station",
+    "Tromsø Airport": "https://www.google.com/maps/search/?api=1&query=Tromso+Airport",
+    "Evenes Airport": "https://www.google.com/maps/search/?api=1&query=Harstad-Narvik+Airport+Evenes",
+    "Svolvær": "https://www.google.com/maps/search/?api=1&query=Svolvaer+Norway",
+    "Reine": "https://www.google.com/maps/search/?api=1&query=Reine+Norway",
+    "Oslo Central Station": "https://www.google.com/maps/search/?api=1&query=Oslo+Central+Station"
+  },
+  "preparation_and_packing": {
+    "documents_and_travel": [
+      "Passport with sufficient validity and blank pages",
+      "Travel insurance details",
+      "Flight booking confirmations",
+      "VR train booking and sleeper cabin confirmation",
+      "Hotel/accommodation confirmations",
+      "Sixt rental confirmation and reservation reference",
+      "Driving licence and any required international driving documentation",
+      "Offline copies/screenshots of essential bookings",
+      "Credit/debit cards and backup payment method"
+    ],
+    "winter_clothing": [
+      "Thermal base layers",
+      "Insulating mid-layer",
+      "Warm waterproof/windproof outer jacket and trousers",
+      "Winter boots with good grip",
+      "Warm socks",
+      "Gloves plus spare pair",
+      "Warm hat/beanie",
+      "Neck warmer/scarf",
+      "Hand warmers",
+      "Aurora/winter photography-friendly clothing"
+    ],
+    "electronics": [
+      "Phone and charging cable",
+      "Power bank",
+      "Universal travel adapter compatible with Finland/Norway",
+      "Camera and spare batteries if using a camera",
+      "Headlamp/flashlight recommended for dark winter roads and outdoor photography"
+    ],
+    "car_and_road_trip": [
+      "Keep rental contract and emergency contact information accessible",
+      "Check tyre type and winter equipment at pickup",
+      "Check weather and road conditions before each driving day",
+      "Keep windshield/vehicle essentials accessible",
+      "Do not assume 4WD eliminates ice risk",
+      "Allow extra winter driving buffer, especially EVE–Svolvær and Moskenes–Evenskjer"
+    ],
+    "aurora": [
+      "Aurora forecast app/service such as Aurora / Yr / My Aurora Forecast",
+      "Tripod if photographing aurora",
+      "Spare camera/phone battery or power bank",
+      "Warm gloves suitable for operating camera/phone",
+      "Keep cloud/weather forecasts checked the same day"
+    ],
+    "health_and_comfort": [
+      "Personal medication",
+      "Basic travel first-aid items",
+      "Lip balm and moisturizer for cold dry weather",
+      "Sunglasses",
+      "Reusable water bottle"
+    ]
+  },
+  "driving_notes": [
+    {
+      "route": "EVE → Svolvær",
+      "distance": "about 165 km",
+      "normal_time": "about 2h25m",
+      "winter_buffer": "3–3.5h"
+    },
+    {
+      "route": "Svolvær → Moskenes",
+      "note": "Many sightseeing stops; depart 08:30 on 2/7."
+    },
+    {
+      "route": "Moskenes → Evenskjer",
+      "distance": "about 280–300 km",
+      "winter_buffer": "5–6h",
+      "recommended_departure": "08:00–08:30"
+    }
+  ],
+  "data_quality_and_reconfirmation": {
+    "booking_data_priority": "user_provided_booking data overrides conflicting planning data",
+    "must_reconfirm_before_departure": [
+      "Flight departure/arrival times and terminal/gate information",
+      "VR265 departure/arrival and sleeper cabin details",
+      "Hotel check-in/check-out and reservation details",
+      "Sixt pickup/return hours, vehicle and winter equipment",
+      "Road conditions and closures",
+      "Attraction opening hours",
+      "Attraction ticket prices",
+      "Husky activity pickup time and meeting point",
+      "Fjellheisen operating status because wind/weather can affect service",
+      "Northern Lights forecast and cloud cover"
+    ],
+    "planning_values_are_not_guaranteed": true,
+    "public_reference_note": "Opening hours and prices stored here are planning/reference values, not guarantees for February 2027."
+  }
+}
+;document.querySelectorAll('.bottom button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.tab)));render('home');setInterval(updateTimers,1000);
+</script></body></html>
